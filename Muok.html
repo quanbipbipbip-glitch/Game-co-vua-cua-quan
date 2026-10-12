@@ -4912,6 +4912,23 @@ document.addEventListener('submit', async e => {
   setTimeout(refreshIcons, 1500);
 })();
 </script>
+<!-- Nút bấm gửi thông báo Telegram -->
+<button onclick="guiThongBao()" style="padding: 12px 24px; background: #0088cc; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 20px;">
+  Gửi thông báo Telegram
+</button>
+
+<script>
+  function guiThongBao() {
+    fetch('/api/send-telegram', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: 'Có người vừa bấm nút trên web!' })
+    })
+    .then(res => res.json())
+    .then(data => alert('Đã gửi thông báo Telegram thành công!'))
+    .catch(err => alert('Lỗi rồi: ' + err));
+  }
+</script>
 </body>
 </html>
 ```
