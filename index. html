@@ -2101,5 +2101,30 @@ window.SEOUL_STUDIO = { state, addToCart, toggleWishlist, render, updateBadges, 
 console.log('%cSEOULÉ','background:#0e0e0e;color:#fff;padding:6px 12px;border-radius:6px;font-weight:700;letter-spacing:3px','v7.1.0 — demo frontend');
 })();
 </script>
+<!-- BẮT ĐẦU CODE POPUP QUẢNG CÁO -->
+<div id="sale-popup" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; padding: 15px 40px 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 99999; width: 85%; max-width: 350px; text-align: center; border: 2px solid #e5e5e5; font-family: sans-serif;">
+    
+    <!-- Nút gạch X -->
+    <button onclick="document.getElementById('sale-popup').style.display='none'" style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer; color: #888; font-weight: bold;">
+        &times;
+    </button>
+    
+    <!-- Nội dung quảng cáo -->
+    <p style="margin: 0; font-size: 15px; line-height: 1.4;">
+        🔥 <strong>Ưu đãi đặc biệt!</strong><br> 
+        Nhập mã <span style="color: #e74c3c; font-weight: bold;">SEOUL20</span> để được giảm ngay <strong>20%</strong> toàn bộ sản phẩm!
+    </p>
+</div>
+
+<script>
+    // Đợi 2 giây (2000 mili-giây) sau khi web tải xong thì hiện popup
+    setTimeout(function() {
+        var popup = document.getElementById('sale-popup');
+        if (popup) {
+            popup.style.display = 'block';
+        }
+    }, 2000);
+</script>
+<!-- KẾT THÚC CODE POPUP QUẢNG CÁO -->
 </body>
 </html>
